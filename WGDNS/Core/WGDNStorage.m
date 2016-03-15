@@ -136,7 +136,7 @@
             *rollback = YES;
         }
         for (WGHost *host in hosts) {
-            if (![db executeUpdate:@"insert into ip_blacklist (ip, host) values (?,?)", host.ip, host.name]) {
+            if (![db executeUpdate:@"insert into host_list (ip, host) values (?,?)", host.ip, host.name]) {
                 NSLog(@"%@",[db.lastError localizedDescription]);
                 *rollback = YES;
             }
